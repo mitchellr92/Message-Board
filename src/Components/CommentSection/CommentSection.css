@@ -1,0 +1,21 @@
+.container {
+    border: 1px solid blue;
+    display: flex;
+    flex-direction: row-reverse;
+    width: 100%;
+}
+
+.comment-section {
+    border: 1px solid red;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+}
+
+.sidebar-container {
+    display: flex;
+    justify-content: center;
+    width: 20%;
+    border: 4px solid 
+}

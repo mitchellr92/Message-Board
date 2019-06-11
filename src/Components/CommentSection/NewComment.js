@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 class NewComment extends Component {
     render() {
-        return <div>New comment</div>;
+        return <div className="new-comment">New comment</div>;
     }
 };
 
