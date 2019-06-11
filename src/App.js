@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import CommentSection from "./Components/CommentSection/CommentSection";
+import Post from "./Components/Posts/Post";
 import Authenticate from './Authentication/Authentication';
 
 class App extends Component {
@@ -13,7 +13,7 @@ class App extends Component {
   render() {
     return (
       <div>
-        <CommentSection
+        <Post
           logout={this.logoutHandler}
         />
       </div>
