@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import CommentSection from "./Components/CommentSection/CommentSection";
-import Login from './Components/Login/Login';
+import Authenticate from './Authentication/Authentication';
 
 class App extends Component {
   constructor() {
@@ -24,4 +24,4 @@ class App extends Component {
   }
 }
 
-export default App;
+export default Authenticate(App);

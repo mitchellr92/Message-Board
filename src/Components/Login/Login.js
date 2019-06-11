@@ -12,7 +12,7 @@ class Login extends Component {
 
   userInput = event => {
     this.setState({
-      password: event.target.value
+      username: event.target.value
     });
   };
 
@@ -34,7 +34,7 @@ class Login extends Component {
 
   render() {
     return (
-      <div>
+      <div className="login-container">
         <h2>Login</h2>
         <input onChange={this.userInput} placeholder="Username..." />
         <input onChange={this.passwordInput} placeholder="Password..." />
