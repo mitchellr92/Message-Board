@@ -45,9 +45,7 @@ class CommentSection extends Component {
             textInput={this.textInput}
           />
         </div>
-        <div className="sidebar-container">
-          <Sidebar logout={this.props.logout} />
-        </div>
+        <Sidebar logout={this.props.logout} />
       </div>
     );
   }

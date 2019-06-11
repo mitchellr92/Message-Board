@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import './NewComment.css';
 
 class NewComment extends Component {
   constructor(props) {

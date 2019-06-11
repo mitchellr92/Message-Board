@@ -1,0 +1,18 @@
+.new-comment {
+    border-top: 1px solid lightgray;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 70px;
+    margin: 1% 2%;
+}
+
+form {
+    width: 100%;
+}
+
+.comment-input {
+    border: grey;
+    width: 100%;
+    text-align: left;
+}

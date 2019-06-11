@@ -38,7 +38,7 @@ class Login extends Component {
         <h2>Login</h2>
         <input onChange={this.userInput} placeholder="Username..." />
         <input onChange={this.passwordInput} placeholder="Password..." />
-        <button onClick={this.loginHandler}>Login</button>
+        <button className="login-button" onClick={this.loginHandler}>Login</button>
       </div>
     );
   }

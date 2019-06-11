@@ -9,7 +9,7 @@ class Sidebar extends Component {
   render() {
     return (
       <div className="sidebar">
-        <button onClick={this.props.logout}>Logout</button>
+        <button className="logout-button" onClick={this.props.logout}>Logout</button>
       </div>
     );
   }

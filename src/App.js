@@ -4,9 +4,6 @@ import CommentSection from "./Components/CommentSection/CommentSection";
 import Authenticate from './Authentication/Authentication';
 
 class App extends Component {
-  constructor() {
-    super();
-  }
 
   logoutHandler = (event) => {
     localStorage.clear();
