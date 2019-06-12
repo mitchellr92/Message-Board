@@ -62,7 +62,7 @@ class App extends Component {
         />
         <Route
           exact
-          path="/home"
+          path="/"
           render={props => (
             <PostContainer
               {...props}

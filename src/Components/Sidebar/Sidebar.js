@@ -16,7 +16,7 @@ class Sidebar extends Component {
 
         <div className="search-bar">Search</div>
 
-        <Link to='/home' className="link">
+        <Link to='/' className="link">
           <div className="posts-link">Posts</div>
         </Link>
         <Link to='/createpost' className="link">
