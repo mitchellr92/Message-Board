@@ -19,14 +19,22 @@ class App extends Component {
 
   getPosts = event => {
     axios
-      .get(`http://localhost:1111/api/home`)
+      .get(`http://localhost:1111/api/posts`)
       .then(response => {
         this.setState({
           posts: response.data
         });
-        console.log(this.state.posts)
+        console.log(this.state.posts);
       })
       .catch(err => console.log("Failure to load posts"));
+  };
+
+  getPost = post => {
+    console.log("clicked");
+    console.log(post);
+    axios.get(`http://localhost:1111/api/posts/${post.id}`).then(response => {
+      console.log(response.data);
+    });
   };
 
   componentDidMount() {
@@ -43,14 +51,24 @@ class App extends Component {
       <div>
         <Route
           exact
-          path="/post"
-          render={props => <Post {...props} logout={this.logoutHandler} />}
+          path="/post/:id"
+          render={props => (
+            <Post
+              {...props}
+              logout={this.logoutHandler}
+              posts={this.state.posts}
+            />
+          )}
         />
         <Route
           exact
           path="/home"
           render={props => (
-            <PostContainer {...props} logout={this.logoutHandler} />
+            <PostContainer
+              {...props}
+              logout={this.logoutHandler}
+              posts={this.state.posts}
+            />
           )}
         />
         <Route
