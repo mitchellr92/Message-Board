@@ -6,7 +6,43 @@
 .new-post-container {
   border: 4px solid orange;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
   width: 80%;
   margin: 1% 2% 0 2%;
+}
+
+.new-post-header {
+  border: 4px solid brown;
+  width: 25%;
+  margin: 2% 0 2% 2%;
+}
+
+.new-post-title {
+  border-top: 1px solid black;
+  font-size: 25px;
+  margin: 0 2% 1% 2%;
+}
+
+.post-content {
+  border: 1px solid blue;
+  font-size: 18px;
+  height: 300px;
+  margin: 0 2% 1% 2%;
+}
+
+.save-button {
+  border: 1px solid red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
+  width: 15%;
+  height: 35px;
+  margin: 2.5% 0 5% 2%;
+}
+
+@media (max-width: 480px) {
+  .page-container{
+    flex-direction: column;
+  }
 }

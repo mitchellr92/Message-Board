@@ -4,3 +4,11 @@
     height: 250px;
     margin: 1% 1% 1% 2%;
 }
+
+@media (max-width: 480px) {
+    .post-card {
+        width: 80%;
+        margin: auto;
+        margin-top: 4%
+    }
+}

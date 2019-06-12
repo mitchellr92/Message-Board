@@ -36,7 +36,7 @@ class NewPost extends Component {
       <div className="page-container">
         <Sidebar logout={this.props.logout} />
         <div className="new-post-container">
-          <h2>Create a new post:</h2>
+          <h2 className="new-post-header">Create a new post:</h2>
           <input
             className="new-post-title"
             placeholder="Title..."

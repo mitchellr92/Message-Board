@@ -20,3 +20,9 @@
 .link {
     margin: 5% 0;
 }
+
+@media (max-width: 480px) {
+    .sidebar {
+        width: 95%;
+    }
+}
