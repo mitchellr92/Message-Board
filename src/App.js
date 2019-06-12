@@ -18,7 +18,7 @@ class App extends Component {
       <div>
         <Route
           exact
-          path="/"
+          path="/post"
           render={props => <Post {...props} logout={this.logoutHandler} />}
         />
         <Route exact path="/home" render={props => <PostContainer />} />

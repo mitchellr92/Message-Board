@@ -11,11 +11,11 @@ class Post extends Component {
   render() {
     return (
       <div className="posts-container">
+        <Sidebar logout={this.props.logout} />
         <div className="post">
           <div className="post-text">post</div>
           <CommentSection />
         </div>
-        <Sidebar logout={this.props.logout} />
       </div>
     );
   }
