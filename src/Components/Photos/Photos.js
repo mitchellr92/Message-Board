@@ -3,6 +3,10 @@ import Sidebar from "../Sidebar/Sidebar";
 import "./Photos.css";
 
 class Photos extends Component {
+  constructor(props) {
+    super(props);
+  }
+
   render() {
     return (
       <div className="page-container">

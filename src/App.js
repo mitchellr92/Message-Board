@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Route } from 'react-router-dom';
+import { Route } from "react-router-dom";
 import "./App.css";
 import Post from "./Components/Posts/Post";
 import Authenticate from "./Authentication/Authentication";
@@ -21,10 +21,23 @@ class App extends Component {
           path="/post"
           render={props => <Post {...props} logout={this.logoutHandler} />}
         />
-        <Route exact path="/home" render={props => <PostContainer />} />
-        <Route exact path="/createpost" render={props => <NewPost />} />
-        <Route exact path="/photos" render={props => <Photos />} />
-        {/* <Post logout={this.logoutHandler} /> */}
+        <Route
+          exact
+          path="/home"
+          render={props => (
+            <PostContainer {...props} logout={this.logoutHandler} />
+          )}
+        />
+        <Route
+          exact
+          path="/createpost"
+          render={props => <NewPost {...props} logout={this.logoutHandler} />}
+        />
+        <Route
+          exact
+          path="/photos"
+          render={props => <Photos {...props} logout={this.logoutHandler} />}
+        />
       </div>
     );
   }

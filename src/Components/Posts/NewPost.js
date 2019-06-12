@@ -3,6 +3,10 @@ import Sidebar from "../Sidebar/Sidebar";
 import "./NewPost.css";
 
 class NewPost extends Component {
+    constructor(props) {
+        super(props);
+    }
+
   render() {
     return (
       <div className="page-container">
