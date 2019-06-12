@@ -29,6 +29,10 @@ class App extends Component {
       .catch(err => console.log("Failure to load posts"));
   };
 
+  componentDidMount() {
+    this.getPosts();
+  }
+
   getPost = post => {
     console.log("clicked");
     console.log(post);
@@ -37,9 +41,15 @@ class App extends Component {
     });
   };
 
-  componentDidMount() {
-    this.getPosts();
-  }
+  createPost = post => {
+    axios
+      .post(`http://localhost:1111/api/posts`, post)
+      .then(response => {
+        this.getPost();
+        this.setState({ posts: response.data });
+      })
+      .catch(err => console.log("Error"));
+  };
 
   logoutHandler = event => {
     localStorage.clear();
@@ -74,7 +84,13 @@ class App extends Component {
         <Route
           exact
           path="/createpost"
-          render={props => <NewPost {...props} logout={this.logoutHandler} />}
+          render={props => (
+            <NewPost
+              {...props}
+              logout={this.logoutHandler}
+              createPost={this.createPost}
+            />
+          )}
         />
         <Route
           exact
