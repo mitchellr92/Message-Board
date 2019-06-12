@@ -1,21 +1,30 @@
 import React, { Component } from "react";
+import { Route } from 'react-router-dom';
 import "./App.css";
 import Post from "./Components/Posts/Post";
-import Authenticate from './Authentication/Authentication';
+import Authenticate from "./Authentication/Authentication";
+import Photos from "./Components/Photos/Photos";
+import PostContainer from "./Components/Posts/PostContainer";
+import NewPost from "./Components/Posts/NewPost";
 
 class App extends Component {
-
-  logoutHandler = (event) => {
+  logoutHandler = event => {
     localStorage.clear();
     window.location.reload();
-  }
+  };
 
   render() {
     return (
       <div>
-        <Post
-          logout={this.logoutHandler}
+        <Route
+          exact
+          path="/"
+          render={props => <Post {...props} logout={this.logoutHandler} />}
         />
+        <Route exact path="/home" render={props => <PostContainer />} />
+        <Route exact path="/createpost" render={props => <NewPost />} />
+        <Route exact path="/photos" render={props => <Photos />} />
+        {/* <Post logout={this.logoutHandler} /> */}
       </div>
     );
   }

@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import './NewPost.css';
+import './PostContainer.css';
 
 class NewPost extends Component {
     render() {
-        return <div className="new-post">Under Construction!</div>
+        return <div className="post-container">Under Construction!</div>
     }
 }
 
