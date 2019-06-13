@@ -41,8 +41,35 @@
   margin: 2.5% 0 5% 2%;
 }
 
+.save-button:hover {
+  cursor: pointer;
+}
+
 @media (max-width: 480px) {
   .page-container{
     flex-direction: column;
+  }
+
+  .new-post-container {
+    width: 95%;
+  }
+
+  .new-post-header {
+    width: 94%;
+    font-size: 30px;
+  }
+
+  .new-post-title{
+    font-size: 30px;
+  }
+
+  .post-content {
+    font-size: 25px;
+  }
+
+  .save-button {
+    width: 96%;
+    font-size: 25px;
+    height: 45px;
   }
 }
