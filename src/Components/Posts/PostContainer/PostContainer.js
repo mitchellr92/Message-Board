@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-import Sidebar from "../Sidebar/Sidebar";
-import PostCard from './PostCard';
-import Post from './Post';
+import Sidebar from "../../Sidebar/Sidebar";
+import PostCard from '../PostCard/PostCard';
+import Post from '../Post/Post';
 import "./PostContainer.css";
 
 class NewPost extends Component {
@@ -11,7 +11,7 @@ class NewPost extends Component {
 
   render() {
     return (
-      <div className="posts">
+      <div className="page-container">
         <Sidebar logout={this.props.logout} />
         <div className="post-container">
           {this.props.posts.map(post => {

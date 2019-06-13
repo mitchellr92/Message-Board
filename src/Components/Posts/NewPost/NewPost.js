@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import Sidebar from "../Sidebar/Sidebar";
+import { Link } from "react-router-dom";
+import Sidebar from "../../Sidebar/Sidebar";
 import "./NewPost.css";
 
 class NewPost extends Component {
@@ -28,8 +29,8 @@ class NewPost extends Component {
   };
 
   inputHandleChange = event => {
-    this.setState({ [event.target.name]: event.target.value})
-  }
+    this.setState({ [event.target.name]: event.target.value });
+  };
 
   render() {
     return (
@@ -51,9 +52,9 @@ class NewPost extends Component {
             onChange={this.inputHandleChange}
             value={this.state.body}
           />
-          <div className="save-button" onClick={this.addPost}>
+          <Link className="save-button" to="/" onClick={this.addPost}>
             Save
-          </div>
+          </Link>
         </div>
       </div>
     );
