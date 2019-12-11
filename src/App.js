@@ -20,7 +20,7 @@ class App extends Component {
 
   getPosts = event => {
     axios
-      .get(`https://magigarp-backend.herokuapp.com//api/posts`)
+      .get(`https://magigarp-backend.herokuapp.com/api/posts`)
       .then(response => {
         this.setState({
           posts: response.data
