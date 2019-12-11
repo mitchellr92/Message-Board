@@ -20,7 +20,7 @@ class App extends Component {
 
   getPosts = event => {
     axios
-      .get(`http://localhost:1111/api/posts`)
+      .get(`http://localhost:8080/api/posts`)
       .then(response => {
         this.setState({
           posts: response.data
@@ -38,28 +38,40 @@ class App extends Component {
     console.log("clicked");
     console.log(post);
     axios
-      .get(`http://localhost:1111/api/posts/${post.id}`)
+      .get(`http://localhost:8080/api/posts/${post.id}`)
       .then(response => {
-        console.log(response.data);
+        this.getPosts();
+        console.log(response);
       })
       .catch(err => console.log("Error"));
   };
 
   createPost = post => {
     axios
-      .post(`http://localhost:1111/api/posts`, post)
+      .post(`http://localhost:8080/api/posts`, post)
       .then(response => {
         this.getPost();
-        this.setState({ posts: response.data });
+        this.setState('data', { posts: response.data });
       })
       .catch(err => console.log("Error"));
   };
 
   deletePost = id => {
+    console.log(id)
     axios
-      .delete(`http://localhost:1111/api/posts/${id}`)
+      .delete(`http://localhost:8080/api/posts/${id}`)
       .then(response => {
         this.getPosts();
+      })
+      .catch(err => console.log("Error"));
+  };
+
+  updatePost = updatedPost => {
+    console.log('updated post', updatedPost)
+    axios
+      .put(`http://localhost:8080/api/posts/${updatedPost.id}`, updatedPost)
+      .then(response => {
+        this.getPosts()
       })
       .catch(err => console.log("Error"));
   };
@@ -109,7 +121,13 @@ class App extends Component {
         <Route
           exact
           path="/editpost"
-          render={props => <EditPost {...props} logout={this.logoutHandler} />}
+          render={props => (
+            <EditPost
+              {...props}
+              logout={this.logoutHandler}
+              updatePost={this.updatePost}
+            />
+          )}
         />
         <Route
           exact

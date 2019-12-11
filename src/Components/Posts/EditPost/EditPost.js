@@ -4,18 +4,38 @@ import Sidebar from "../../Sidebar/Sidebar";
 import "./EditPost.css";
 
 class EditPost extends Component {
-  constructor(props) {
-      super(props);
+    constructor(props) {
+        super(props);
       
-      this.state = {
-          title: "",
-          body: "",
-      }
+        this.state = {
+            posts: [],
+            title: "",
+            body: "",
+        }
     }
     
     inputHandleChange = event => {
         this.setState({ [event.target.name]: event.target.value });
     };
+
+    editPost = event => {
+        event.preventDefault()
+        const post = {
+            title: this.state.title,
+            body: this.state.body,
+            id: this.props.match.params.id,
+        }
+
+        console.log('match', this.props)
+        console.log('edit post',post)
+
+        this.props.updatePost(post)
+
+        this.setState({
+            title: "",
+            body: "",
+        })
+    }
 
   render() {
     return (
@@ -37,7 +57,7 @@ class EditPost extends Component {
             onChange={this.inputHandleChange}
             value={this.state.body}
           />
-          <Link className="save-button" to="/" onClick={this.addPost}>
+          <Link className="save-button" to="/" onClick={this.editPost}>
             Save
           </Link>
         </div>
