@@ -20,7 +20,7 @@ class App extends Component {
 
   getPosts = event => {
     axios
-      .get(`http://localhost:8080/api/posts`)
+      .get(`https://magigarp-backend.herokuapp.com//api/posts`)
       .then(response => {
         this.setState({
           posts: response.data
@@ -38,7 +38,7 @@ class App extends Component {
     console.log("clicked");
     console.log(post);
     axios
-      .get(`http://localhost:8080/api/posts/${post.id}`)
+      .get(`https://magigarp-backend.herokuapp.com//${post.id}`)
       .then(response => {
         this.getPosts();
         console.log(response);
@@ -48,7 +48,7 @@ class App extends Component {
 
   createPost = post => {
     axios
-      .post(`http://localhost:8080/api/posts`, post)
+      .post(`https://magigarp-backend.herokuapp.com/`, post)
       .then(response => {
         this.getPost();
         this.setState('data', { posts: response.data });
@@ -59,7 +59,7 @@ class App extends Component {
   deletePost = id => {
     console.log(id)
     axios
-      .delete(`http://localhost:8080/api/posts/${id}`)
+      .delete(`https://magigarp-backend.herokuapp.com//${id}`)
       .then(response => {
         this.getPosts();
       })
@@ -69,7 +69,7 @@ class App extends Component {
   updatePost = updatedPost => {
     console.log('updated post', updatedPost)
     axios
-      .put(`http://localhost:8080/api/posts/${updatedPost.id}`, updatedPost)
+      .put(`https://magigarp-backend.herokuapp.com//${updatedPost.id}`, updatedPost)
       .then(response => {
         this.getPosts()
       })
